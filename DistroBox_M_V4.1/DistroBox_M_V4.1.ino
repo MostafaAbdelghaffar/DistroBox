@@ -208,6 +208,7 @@ void handleOKClick() {
     bool state = !EEPROM.read(relayAddr); // Toggle the state
     EEPROM.update(relayAddr, state); // Update EEPROM
     relayWrite(); // Update the physical relay pins
+    change = true; // Force LCD update
   } else if (menu[0] == 2) { // "Output ctrl:"
     int outputIndex = menu[1] - 14; // Adjust indexing: CALDIGIT = 0, out2 = 1, ..., out11 = 10
     if (outputIndex >= 0 && outputIndex < 11) { // Ensure the index is valid
@@ -220,7 +221,7 @@ void handleOKClick() {
       I2C_command();
 
       // Update the LCD display
-      change = true;
+      change = true; // Force LCD update
     }
   }
 }
