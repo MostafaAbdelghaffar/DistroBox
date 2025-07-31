@@ -44,12 +44,9 @@ const String botMenu[BOT_MENU_ITEMS] = {"-", "-", "-", "-", "-", "-", "-", "-", 
 #define BTN_BR 5             // Bottom Right button
 #define BTN_OK 4             // OK button
 #define DEBOUNCE_INTERVAL 10 // Debounce interval (ms)
-#define FAN_PIN 3            // Fan control pin
-#define VOLT_DC A2           // Voltage divider for DC line
-#define VOLT_BAT A3          // Voltage divider for battery line
 
 //-- I2C Communication Variables --
-int incomingMsg;        // Stores incoming I2C message
+//int incomingMsg;        // Stores incoming I2C message // NOT USED 
 String checkMessage;    // Message to request state (e.g., "check 2")
 String controlMessage;  // Message to control state (e.g., "2 OFF")
 String incomingConfirm; // Confirmation from slave
