@@ -22,7 +22,7 @@ The previous Engineer used High-side switching using PMOS and NPN to trigger the
 <p align="center">
   <img src="Old_High_Side.png" alt="Description" width="50%">
 </p>
-I on the other hand prefer Low-side switching when it comes to high load and high voltage. So I have designed a Low-side circuit using NMOS, as follows:
+I on the other hand was curious of using Low-side switching when it comes to high load and high voltage. So I have designed a Low-side circuit using NMOS, as follows:
 <p align="center">
   <img src="Low_Side.png" alt="Description" width="50%">
 </p>
@@ -33,8 +33,22 @@ Since the project has 11 outputs. This circuit was placed 11 times.
   <img src="12_SwitchingCircuits.png" alt="Description" width="50%">
 </p>
 
+After further research on the load and the kind of devices that will be used as load. It turns out that using high-side switching is safer:
+| Feature           | High-Side Switching            | Low-Side Switching              |
+|-------------------|-------------------------------|---------------------------------|
+| **Switch Location** | Between source and load        | Between load and ground         |
+| **Safety**          | Generally safer                | Less safe in grounded systems   |
+| **Complexity**      | More complex                   | Simpler                         |
+| **Cost**            | Potentially higher             | Lower                           |
+| **Load Isolation**  | Higher                         | Lower                           |
+
+
+The cost may be lower but in our system High side switching would be better. So we will stick with the high-side.
+
+Conclusion: the high-side switching and the low-side switching was a learning experience and I am glad I been through.
+
 <hr>
-The second major thing that I had done was to design on 3D CAD the Front panel as the hardware case will need to be manufactured.
+The second section that I had done was to design on 3D CAD the Front panel as the hardware case will need to be manufactured.
 
 The following is what the previous engineer had done. Great job :D
 <p align="center">
@@ -59,5 +73,7 @@ On the other hand, I have chosen a specific dcdc converter with very good heat-s
 <p align="center">
   <img src="LM2596.png" alt="Description" width="50%">
 </p>
+
+The previous is later to be implemented in the project in the future.
 
 
